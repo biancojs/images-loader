@@ -7,7 +7,7 @@ import domToArray from 'bianco.dom-to-array'
  */
 export function loadImage(img) {
   const isUrl = typeof img === 'string'
-  let i = isUrl ? document.createElement('img') : img
+  const i = isUrl ? document.createElement('img') : img
 
   // this image was already loaded
   if (!isUrl && i.complete) return Promise.resolve(i)
