@@ -23,7 +23,7 @@ loadImage('path/to/the/image.jpg')
 Or also DOM nodes:
 
 ```js
-import $ from 'bianco-query'
+import $ from 'bianco.query'
 import { loadImage } from 'bianco-images-loader'
 
 loadImage($('img.cool')).then(img => img.classList.add('loaded'))
@@ -48,7 +48,7 @@ loadImages([
 Or also...
 
 ```js
-import $ from 'bianco-query'
+import $ from 'bianco.query'
 import { loadImages } from 'bianco-images-loader'
 
 loadImages($('img', '.main-content'))
