@@ -1,6 +1,6 @@
 {
   "name": "bianco.images-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Modern images loader helpers written in es2015 using generators and promises",
   "main": "index.js",
   "jsnext:main": "index.next.js",
