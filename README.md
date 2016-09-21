@@ -13,12 +13,7 @@ Modern images loader helpers written in es2015 using generators and promises
 ```js
 import { loadImage } from 'bianco.images-loader'
 
-loadImage('path/to/the/image.jpg')
-  .then(img => document.body.appendChild(img))
-  .catch(function(error) {
-    // there was an error loading the image
-  })
-
+loadImage('path/to/the/image.jpg').then(img => document.body.appendChild(img))
 ```
 
 Or also DOM nodes:
@@ -27,7 +22,11 @@ Or also DOM nodes:
 import $ from 'bianco.query'
 import { loadImage } from 'bianco.images-loader'
 
-loadImage($('img.cool')).then(img => img.classList.add('loaded'))
+loadImage($('img.cool'))
+  .then(img => img.classList.add('loaded'))
+  .catch(function(error) {
+    // there was an error loading the image
+  })
 ```
 
 #### Load a multiple images
@@ -36,9 +35,9 @@ loadImage($('img.cool')).then(img => img.classList.add('loaded'))
 import { loadImages } from 'bianco.images-loader'
 
 loadImages([
-  'path/to/the/image1.jpg',
-  'path/to/the/image2.jpg'
-])
+    'path/to/the/image1.jpg',
+    'path/to/the/image2.jpg'
+  ])
   .then(img => document.body.appendChild(img))
   .catch(error => {
     // there was an error loading one of images
