@@ -98,6 +98,6 @@ loader.next().value.then(img => {
 [license-image]:http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:LICENSE.txt
 
-[npm-version-image]:http://img.shields.io/npm/v/bianco-images-loader.svg?style=flat-square
-[npm-downloads-image]:http://img.shields.io/npm/dm/bianco-images-loader.svg?style=flat-square
-[npm-url]:https://npmjs.org/package/bianco-images-loader
+[npm-version-image]:http://img.shields.io/npm/v/bianco.images-loader.svg?style=flat-square
+[npm-downloads-image]:http://img.shields.io/npm/dm/bianco.images-loader.svg?style=flat-square
+[npm-url]:https://npmjs.org/package/bianco.images-loader
