@@ -10,7 +10,7 @@
 
 #### Load a single image
 ```js
-import { loadImage } from 'bianco-images-loader'
+import { loadImage } from 'bianco.images-loader'
 
 loadImage('path/to/the/image.jpg')
   .then(img => document.body.appendChild(img))
@@ -24,7 +24,7 @@ Or also DOM nodes:
 
 ```js
 import $ from 'bianco.query'
-import { loadImage } from 'bianco-images-loader'
+import { loadImage } from 'bianco.images-loader'
 
 loadImage($('img.cool')).then(img => img.classList.add('loaded'))
 ```
@@ -32,7 +32,7 @@ loadImage($('img.cool')).then(img => img.classList.add('loaded'))
 #### Load a multiple images
 
 ```js
-import { loadImages } from 'bianco-images-loader'
+import { loadImages } from 'bianco.images-loader'
 
 loadImages([
   'path/to/the/image1.jpg',
@@ -49,7 +49,7 @@ Or also...
 
 ```js
 import $ from 'bianco.query'
-import { loadImages } from 'bianco-images-loader'
+import { loadImages } from 'bianco.images-loader'
 
 loadImages($('img', '.main-content'))
   .then(img => img.classList.add('loaded'))
@@ -62,7 +62,7 @@ loadImages($('img', '.main-content'))
 #### Load sequentially images using a generator
 
 ```js
-import { loadImagesGen } from 'bianco-images-loader'
+import { loadImagesGen } from 'bianco.images-loader'
 
 const loader = loadImagesGen([
   'path/to/the/image1.jpg',
