@@ -1,10 +1,11 @@
 # bianco.images-loader
 
 [![Build Status][travis-image]][travis-url]
-
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
+
+Modern images loader helpers written in es2015 using generators and promises
 
 ## Usage
 
