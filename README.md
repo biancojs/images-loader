@@ -1,4 +1,4 @@
-# bianco-images-loader
+# bianco.images-loader
 
 [![Build Status][travis-image]][travis-url]
 
@@ -6,10 +6,7 @@
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
 
-
-
 ## Usage
-
 
 #### Load a single image
 ```js
