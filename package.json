@@ -1,0 +1,42 @@
+{
+  "name": "bianco.images-loader",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "jsnext:main": "index.next.js",
+  "scripts": {
+    "prepublish": "npm run build && npm test",
+    "lint": "eslint index.next.js test.js rollup.config.js",
+    "build": "rollup -c",
+    "test": "npm run lint && mocha test.js"
+  },
+  "files": [
+    "index.js",
+    "index.next.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biancojs/images-loader.git"
+  },
+  "keywords": [
+    "es6",
+    "es2015",
+    "images loader",
+    "img",
+    "loader",
+    "generators"
+  ],
+  "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (http://gianlucaguarini.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biancojs/images-loader/issues"
+  },
+  "homepage": "https://github.com/biancojs/images-loader#readme",
+  "devDependencies": {
+    "jsdom": "9.5.0",
+    "jsdom-global": "2.1.0"
+  },
+  "dependencies": {
+    "bianco.dom-to-array": "^0.0.4"
+  }
+}
