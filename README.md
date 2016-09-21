@@ -38,7 +38,7 @@ loadImages([
     'path/to/the/image1.jpg',
     'path/to/the/image2.jpg'
   ])
-  .then(img => document.body.appendChild(img))
+  .then(imgs => imgs.forEach(i => document.body.appendChild(i)))
   .catch(error => {
     // there was an error loading one of images
   })
@@ -52,7 +52,7 @@ import $ from 'bianco.query'
 import { loadImages } from 'bianco.images-loader'
 
 loadImages($('img', '.main-content'))
-  .then(img => img.classList.add('loaded'))
+  .then(imgs => imgs.forEach(i => i.classList.add('loaded')))
   .catch(error => {
     // there was an error loading one of images
   })
