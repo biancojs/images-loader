@@ -36,10 +36,10 @@ export function loadImages(imgs) {
  * @yields { Promise } a promise that will be resolved when the image will be completely loaded
  */
 export function * loadImagesGen (imgs) {
-  const list = domToArray(imgs)
+  const list = domToArray(imgs).map(loadImage)
 
-  for (let img of list) {
-    yield loadImage(img)
+  for (let imgPromise of list) {
+    yield imgPromise
   }
 }
 
