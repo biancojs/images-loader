@@ -59,28 +59,33 @@ loadImages($('img', '.main-content'))
 
 ```
 
-#### Load sequentially images using a generator
+#### Lazy load sequentially images using a generator
 
 ```js
 import { loadImagesGen } from 'bianco.images-loader'
 
-const loader = loadImagesGen([
-  'path/to/the/image1.jpg',
-  'path/to/the/image2.jpg',
-  'path/to/the/image3.jpg'
-])
+const infiniteList = loadImagesGen([...many images])
 
-// load the first image
-loader.next().value.then(img => {
-  // do something with the image
+// load the first 10 images
+let i = 10
+while (i--) {
+  infiniteList.next().value.then(onImageLoaded)
+}
 
-  // do something with the remaining images to load
-  for (let promise of loader) {
-    promise.then(i => {
-      // do whathever you want here
-    })
-  }
-})
+// do something
+
+// load other 5 images
+i = 5
+while (i--) {
+  infiniteList.next().value.then(onImageLoaded)
+}
+
+// do something else
+
+// load the remaining images
+for (let promise of infiniteList) {
+  promise.next().value.then(onImageLoaded)
+}
 ```
 
 ## API
