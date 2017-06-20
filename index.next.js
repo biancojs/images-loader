@@ -30,21 +30,8 @@ export function loadImages(imgs) {
   return Promise.all(domToArray(imgs).map(loadImage))
 }
 
-/**
- * Load sequentially a collection of images
- * @param  { Array|NodeList } imgs - array of strings or <img> HTML elements
- * @yields { Promise } a promise that will be resolved when the image will be completely loaded
- */
-export function * loadImagesGen (imgs) {
-  const list = domToArray(imgs)
-
-  for (let img of list) {
-    yield loadImage(img)
-  }
-}
 
 export default {
   loadImage,
-  loadImages,
-  loadImagesGen
+  loadImages
 }

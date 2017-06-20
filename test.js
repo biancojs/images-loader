@@ -46,21 +46,4 @@ describe('Bianco images-loader', function() {
       done()
     })
   })
-
-  it('It can load images sequentially with a generator', function(done) {
-    const gen = loadImagesGen([pathGen.next().value, pathGen.next().value])
-    gen.next().value.then(function (i) {
-      assert.equal(typeof i.src, 'string')
-      done()
-    })
-  })
-
-  it('It can loop generator sequences', function(done) {
-    const gen = loadImagesGen([pathGen.next().value, pathGen.next().value])
-    const promises = []
-    for (let p of gen) {
-      promises.push(p)
-    }
-    Promise.all(promises).then(_ => done())
-  })
 })

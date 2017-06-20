@@ -5,7 +5,7 @@
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
 
-Modern images loader helpers written in es2015 using generators and promises
+Modern images loader helpers written in es2015 using promises
 
 ## Usage
 
@@ -58,35 +58,6 @@ loadImages($('img', '.main-content'))
   })
 ```
 
-#### Lazy load sequentially images using a generator
-
-```js
-import { loadImagesGen } from 'bianco.images-loader'
-
-const infiniteList = loadImagesGen([...many images])
-
-// load the first 10 images
-let i = 10
-while (i--) {
-  infiniteList.next().value.then(onImageLoaded)
-}
-
-// do something
-
-// load other 5 images
-i = 5
-while (i--) {
-  infiniteList.next().value.then(onImageLoaded)
-}
-
-// do something else
-
-// load the remaining images
-for (let promise of infiniteList) {
-  promise.next().value.then(onImageLoaded)
-}
-```
-
 [travis-image]: https://img.shields.io/travis/biancojs/images-loader.svg?style=flat-square
 
 [travis-url]: https://travis-ci.org/biancojs/images-loader
@@ -124,11 +95,3 @@ Load in parallel a collection of images
 -   `imgs` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList))** array of strings or <img> HTML elements
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** a promise that will be resolved when all the images will be loaded
-
-### loadImagesGen
-
-Load sequentially a collection of images
-
-**Parameters**
-
--   `imgs` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList))** array of strings or <img> HTML elements
