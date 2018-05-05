@@ -38,3 +38,6 @@ jspm_packages
 
 # generated files
 index.js
+
+# Mac generated files
+.DS_Store
