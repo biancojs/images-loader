@@ -35,8 +35,13 @@
   },
   "homepage": "https://github.com/biancojs/images-loader#readme",
   "devDependencies": {
+    "@gianlucaguarini/eslint-config": "^2.0.0",
+    "eslint": "^4.19.1",
     "jsdom": "9.5.0",
-    "jsdom-global": "2.1.0"
+    "jsdom-global": "2.1.0",
+    "mocha": "^5.2.0",
+    "rollup": "^0.59.4",
+    "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
     "bianco.dom-to-array": "0.0.8"

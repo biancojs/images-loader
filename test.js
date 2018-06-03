@@ -1,20 +1,23 @@
 require('jsdom-global')()
+
 const assert = require('assert')
-const jsdom = require('jsdom')
 const body = document.body
-const { loadImage, loadImages, loadImagesGen } = require('./')
+const { loadImage, loadImages } = require('./')
 const pathGen = pathGenerator()
 
+
+/* eslint-disable */
 function * pathGenerator() {
   let i = 1
   while (i) {
-    yield `data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7?${ i++ }`
+    yield `data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7?${i++}`
   }
 }
+/* eslint-enable */
 
 describe('Bianco images-loader', function() {
-  beforeEach(function () {
-    var div = document.createElement('div')
+  beforeEach(function() {
+    const div = document.createElement('div')
     div.innerHTML = `
       <img src=''>
     `
@@ -30,14 +33,14 @@ describe('Bianco images-loader', function() {
     img.src = pathGen.next().value
   })
 
-// this test does not work in jsdom somehow
-/*  it('It can throw properly the errors', function(done) {
+  // this test does not work in jsdom somehow
+  /*it('It can throw properly the errors', function(done) {
     const img = document.querySelector('img')
     loadImage(img).catch(function(e) {
       assert.equal(typeof e, Error)
       done()
     })
-    img.src = pathGen.next().value
+    img.src = 'foo-bar'
   })*/
 
   it('It can load arrays of images urls', function(done) {

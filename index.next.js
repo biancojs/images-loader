@@ -2,7 +2,7 @@ import domToArray from 'bianco.dom-to-array'
 
 /**
  * Preload any image
- * @param   { String|HTMLElement } img - Path to the image or image object
+ * @param   { string|HTMLElement } img - Path to the image or image object
  * @returns { Promise } a promise that will be resolved when the image will be completely loaded
  */
 export function loadImage(img) {
@@ -15,7 +15,7 @@ export function loadImage(img) {
   // the image reference will set to null
   // to avoid memory leaks
   return new Promise((resolve, reject) => {
-    i.onload = _ => resolve(i)
+    i.onload = () => resolve(i)
     i.onerror = i.onabort = reject
     if (isUrl) i.src = img
   })
