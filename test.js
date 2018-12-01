@@ -1,7 +1,7 @@
 require('jsdom-global')()
 
 const assert = require('assert')
-const { loadImage, loadImages } = require('./')
+const imagesLoader = require('./')
 
 
 const LOAD_FAILURE_SRC = 'succes.jpg'
@@ -21,10 +21,18 @@ Object.defineProperty(global.Image.prototype, 'src', {
 
 
 describe('Bianco images-loader', function() {
+
+  it('export default contains all the module methods', function() {
+    assert.deepEqual(Object.keys(imagesLoader.default), [
+      'loadImage',
+      'loadImages'
+    ])
+  })
+
   it('It can load images in the DOM', function(done) {
     const img = document.createElement('img')
 
-    loadImage(img).then(function(i) {
+    imagesLoader.loadImage(img).then(function(i) {
       assert.ok(i)
       done()
     })
@@ -36,7 +44,7 @@ describe('Bianco images-loader', function() {
   it('It can throw properly the errors', function(done) {
     const img = document.createElement('img')
 
-    loadImage(img).then(() => {
+    imagesLoader.loadImage(img).then(() => {
       throw 'This image should be not loaded'
     }).catch(function(e) {
       assert.ok(e instanceof Error)
@@ -47,7 +55,7 @@ describe('Bianco images-loader', function() {
   })
 
   it('It can load arrays of images urls', function(done) {
-    loadImages([LOAD_SUCCESS_SRC, LOAD_SUCCESS_SRC]).then(function(imgs) {
+    imagesLoader.loadImages([LOAD_SUCCESS_SRC, LOAD_SUCCESS_SRC]).then(function(imgs) {
       assert.equal(imgs.length, 2)
       done()
     })
