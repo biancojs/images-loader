@@ -16,8 +16,8 @@ export function loadImage(img) {
   // the image reference will set to null
   // to avoid memory leaks
   return new Promise((resolve, reject) => {
+    add(i, 'error abort', error => reject(new Error(error)), { once: true })
     add(i, 'load', () => resolve(i), { once: true })
-    add(i, 'error abort', reject)
     if (isUrl) i.src = img
   })
 }

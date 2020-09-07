@@ -4,16 +4,16 @@ const assert = require('assert')
 const imagesLoader = require('./')
 
 
-const LOAD_FAILURE_SRC = 'succes.jpg'
-const LOAD_SUCCESS_SRC = 'failed.jpg'
+const LOAD_FAILURE_SRC = 'failed.jpg'
+const LOAD_SUCCESS_SRC = 'success.jpg'
 
 /* eslint-disable */
 Object.defineProperty(global.Image.prototype, 'src', {
   set(src) {
     if (src === LOAD_FAILURE_SRC) {
-      setTimeout(() => this.onerror(new Error('mocked error')), Math.random() * 1000)
+      setTimeout(() => this.dispatchEvent(new Event('error')), Math.random() * 500)
     } else if (src === LOAD_SUCCESS_SRC) {
-      setTimeout(() => this.onload(), Math.random() * 1000)
+      setTimeout(() => this.dispatchEvent(new Event('load')), Math.random() * 1000)
     }
   }
 })
