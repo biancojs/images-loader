@@ -1,3 +1,4 @@
+import { add } from 'bianco.events'
 import domToArray from 'bianco.dom-to-array'
 
 /**
@@ -15,8 +16,8 @@ export function loadImage(img) {
   // the image reference will set to null
   // to avoid memory leaks
   return new Promise((resolve, reject) => {
-    i.onload = () => resolve(i)
-    i.onerror = i.onabort = reject
+    add(i, 'load', () => resolve(i), { once: true })
+    add(i, 'error abort', reject)
     if (isUrl) i.src = img
   })
 }

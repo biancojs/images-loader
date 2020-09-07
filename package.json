@@ -44,6 +44,7 @@
     "rollup-plugin-node-resolve": "^3.4.0"
   },
   "dependencies": {
-    "bianco.dom-to-array": "0.0.10"
+    "bianco.dom-to-array": "^1.0.0",
+    "bianco.events": "^1.0.0"
   }
 }
