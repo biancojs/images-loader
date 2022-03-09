@@ -58,16 +58,13 @@ loadImages($('img', '.main-content'))
   })
 ```
 
-[travis-image]: https://img.shields.io/travis/biancojs/images-loader.svg?style=flat-square
-
-[travis-url]: https://travis-ci.org/biancojs/images-loader
+[ci-image]:https://img.shields.io/github/workflow/status/biancojs/images-loader/test?style=flat-square
+[ci-url]:https://github.com/biancojs/images-loader/actions
 
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
-
 [license-url]: LICENSE.txt
 
 [npm-version-image]: http://img.shields.io/npm/v/bianco.images-loader.svg?style=flat-square
-
 [npm-downloads-image]: http://img.shields.io/npm/dm/bianco.images-loader.svg?style=flat-square
 
 [npm-url]: https://npmjs.org/package/bianco.images-loader
