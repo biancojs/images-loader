@@ -58,7 +58,7 @@ loadImages($('img', '.main-content'))
   })
 ```
 
-[ci-image]:https://img.shields.io/github/workflow/status/biancojs/images-loader/test?style=flat-square
+[ci-image]:https://img.shields.io/github/actions/workflow/status/biancojs/images-loader/test.yml?style=flat-square
 [ci-url]:https://github.com/biancojs/images-loader/actions
 
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
